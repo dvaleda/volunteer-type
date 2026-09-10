@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-50: #fef7f0;
+  --color-warm-100: #fdeee0;
+  --color-warm-200: #fad9bd;
+  --color-warm-300: #f5bc8a;
+  --color-warm-400: #f09856;
+  --color-warm-500: #e97d33;
+  --color-warm-600: #d4612a;
+  --color-warm-700: #b04a24;
+  --color-warm-800: #8d3c23;
+  --color-warm-900: #72331f;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.35s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
