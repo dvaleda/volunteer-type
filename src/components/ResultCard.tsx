@@ -12,11 +12,15 @@ const getCompatibleType = (id: VolunteerTypeId) =>
 export function ResultCard({ result, onRestart }: Props) {
   const compatible = getCompatibleType(result.compatibleWith)
   
-  const shareText = `Ja sam ${result.name} ${result.emoji}! Koji tip volontera si ti? 🙌`
-  const shareUrl = window.location.href
+  const shareUrl = window.location.origin
+  const shareText = `Ja sam ${result.name} ${result.emoji}!
+
+Koji tip volontera si ti? 🙌
+${shareUrl}`
   
   const shareWhatsApp = () => {
-    window.open(`https://wa.me/?text=${encodeURIComponent(shareText + '\n' + shareUrl)}`, '_blank')
+    const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`
+    window.location.href = waUrl
   }
   
   const shareInstagram = async () => {
