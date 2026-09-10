@@ -13,10 +13,7 @@ export function ResultCard({ result, onRestart }: Props) {
   const compatible = getCompatibleType(result.compatibleWith)
   
   const shareUrl = window.location.origin
-  const shareText = `Ja sam ${result.name} ${result.emoji}!
-
-Koji tip volontera si ti? 🙌
-${shareUrl}`
+  const shareText = `Ja sam ${result.name}! Koji tip volontera si ti? Rijesi kviz: ${shareUrl}`
   
   const shareWhatsApp = () => {
     const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`
